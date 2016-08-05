@@ -13,9 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    myRect.cpp
+    myRect.cpp \
+    bullet.cpp
 
 HEADERS  += \
-    myRect.h
+    myRect.h \
+    bullet.h
 
 FORMS    +=
