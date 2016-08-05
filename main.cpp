@@ -13,15 +13,15 @@ int main(int argc, char *argv[])
 
 
     // create an item to put into the scene
-    myRect * rect = new myRect();
-    rect->setRect(0,0,100,100);
+    myRect * player = new myRect();
+    player->setRect(0,0,100,100);
 
     // add the item to the scene
-    scene->addItem(rect);
+    scene->addItem(player);
 
     // make the item focusable
-    rect->setFlag(QGraphicsItem::ItemIsFocusable);
-    rect->setFocus();
+    player->setFlag(QGraphicsItem::ItemIsFocusable);
+    player->setFocus();
 
 
     // add a view
@@ -31,6 +31,10 @@ int main(int argc, char *argv[])
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
      view->show();
+     view->setFixedSize(1200,1000);
+     scene->setSceneRect(0,0,1200,1000);
+
+     player->setPos(view->width()/2, view->height()- player->rect().height() );
 
     return a.exec();
 }
