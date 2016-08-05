@@ -12,8 +12,10 @@ TARGET = Qt_Game
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    myRect.cpp
 
-HEADERS  +=
+HEADERS  += \
+    myRect.h
 
 FORMS    +=

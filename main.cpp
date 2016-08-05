@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QGraphicsScene>
-#include <QGraphicsRectItem>
+#include  "myRect.h"
 #include <QGraphicsView>
 
 
@@ -13,11 +13,15 @@ int main(int argc, char *argv[])
 
 
     // create an item to put into the scene
-    QGraphicsRectItem * rect = new QGraphicsRectItem();
+    myRect * rect = new myRect();
     rect->setRect(0,0,100,100);
 
     // add the item to the scene
     scene->addItem(rect);
+
+    // make the item focusable
+    rect->setFlag(QGraphicsItem::ItemIsFocusable);
+    rect->setFocus();
 
 
     // add a view
