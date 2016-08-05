@@ -3,6 +3,8 @@
 #include "QDebug"
 #include <QKeyEvent>
 #include "bullet.h"
+#include "Enemy.h"
+
 
 void myRect::keyPressEvent(QKeyEvent *event)
 {
@@ -11,11 +13,13 @@ void myRect::keyPressEvent(QKeyEvent *event)
 
     if(event->key()== Qt::Key_Left)
     {
+        if(pos().x()>0)
         setPos(x()-10,y());
     }
 
     else if(event->key()== Qt::Key_Right)
     {
+        if(pos().x() + 100 < 1200)
         setPos(x()+10,y());
     }
 
@@ -37,4 +41,11 @@ void myRect::keyPressEvent(QKeyEvent *event)
         scene()->addItem(bullet1);
     }
 
+}
+
+void myRect::spawn()
+{
+    // create an enemy
+    Enemy * enemy = new Enemy();
+    scene()->addItem(enemy);
 }

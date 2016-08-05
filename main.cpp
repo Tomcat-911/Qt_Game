@@ -2,6 +2,8 @@
 #include <QGraphicsScene>
 #include  "myRect.h"
 #include <QGraphicsView>
+#include <QTimer>
+#include <QObject>
 
 
 int main(int argc, char *argv[])
@@ -34,7 +36,12 @@ int main(int argc, char *argv[])
      view->setFixedSize(1200,1000);
      scene->setSceneRect(0,0,1200,1000);
 
-     player->setPos(view->width()/2, view->height()- player->rect().height() );
+     player->setPos(view->width()/2, view->height()- player->rect().height());
+
+     // spawn enemies
+     QTimer *timer = new QTimer();
+     QObject::connect(timer,SIGNAL(timeout()), player, SLOT(spawn()));
+     timer->start(2000);
 
     return a.exec();
 }

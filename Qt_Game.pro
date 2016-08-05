@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     myRect.cpp \
-    bullet.cpp
+    bullet.cpp \
+    Enemy.cpp
 
 HEADERS  += \
     myRect.h \
-    bullet.h
+    bullet.h \
+    Enemy.h
 
 FORMS    +=
