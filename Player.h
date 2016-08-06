@@ -1,17 +1,18 @@
-#ifndef MYRECT_H
-#define MYRECT_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <QGraphicsRectItem>
 #include <QObject>
 
-class myRect: public QObject, public QGraphicsRectItem
+class Player: public QObject, public QGraphicsRectItem
 {
     Q_OBJECT
 
 public:
     void keyPressEvent(QKeyEvent *event);
+
 public slots:
     void spawn();
 };
 
-#endif // MYRECT_H
+#endif // PLAYER_H

@@ -4,12 +4,12 @@
 #include <QGraphicsRectItem>
 #include <QObject>
 
-class bullet: public QObject, public QGraphicsRectItem
+class Bullet: public QObject,public QGraphicsRectItem
 {
     Q_OBJECT
 
 public:
-     bullet();
+     Bullet(QGraphicsItem * parent=0);
 
 public slots:
     void move();

@@ -1,15 +1,15 @@
-#include "myRect.h"
+#include "Player.h"
 #include <QGraphicsScene>
 #include "QDebug"
 #include <QKeyEvent>
-#include "bullet.h"
+#include "Bullet.h"
 #include "Enemy.h"
 
 
-void myRect::keyPressEvent(QKeyEvent *event)
+void Player::keyPressEvent(QKeyEvent *event)
 {
 
-    //qDebug() << "myRect knows that you pressed a key";
+    //qDebug() << "Player knows that you pressed a key";
 
     if(event->key()== Qt::Key_Left)
     {
@@ -36,14 +36,14 @@ void myRect::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_Space)
     {
         // create a bullet
-        bullet * bullet1 = new bullet();
-        bullet1->setPos(x(),y());
-        scene()->addItem(bullet1);
+        Bullet * bullet = new Bullet();
+        bullet->setPos(x(),y());
+        scene()->addItem(bullet);
     }
 
 }
 
-void myRect::spawn()
+void Player::spawn()
 {
     // create an enemy
     Enemy * enemy = new Enemy();

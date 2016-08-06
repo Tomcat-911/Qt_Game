@@ -4,8 +4,9 @@
 #include <QGraphicsScene>
 #include <QList>
 #include <stdlib.h> // rand() -> really large int
+#include "Game.h"
 
-
+extern Game *game;
 
 Enemy::Enemy()
 {
@@ -30,10 +31,15 @@ void Enemy::move()
     // move enemy down
     setPos(x(),y()+5);
 
-    if (pos().y()+ rect().height()<0)
+    //destroy enemy when it goes out of the screen
+    if (pos().y() /*+ rect().height()*/ >1000)
     {
+        //decrease the health
+        game->health->decrease();
         scene()->removeItem(this);
         delete this;
-        //qDebug() << "bullet deleted";
+        //qDebug() << "Enemy deleted";
     }
 }
+
+
